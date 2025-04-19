@@ -16,8 +16,8 @@ function createStar() {
   return {
     x: Math.random() * width,
     y: -20,
-    size: 6 + Math.random() * 4,
-    speed: 0.5 + Math.random() * 1,
+    size: 14 + Math.random() * 6,
+    speed: 0.4 + Math.random(),
     dx: -0.5 + Math.random() * -1.5,
     tail: [],
     color: "#ffe6f0"
@@ -25,16 +25,16 @@ function createStar() {
 }
 
 function updateStars() {
-  if (stars.length < 5 && Math.random() < 0.05) {
+  if (stars.length < 5 && Math.random() < 0.06) {
     stars.push(createStar());
   }
   stars.forEach(star => {
     star.tail.push({ x: star.x, y: star.y });
-    if (star.tail.length > 8) star.tail.shift();
+    if (star.tail.length > 10) star.tail.shift();
     star.x += star.dx;
     star.y += star.speed;
   });
-  stars = stars.filter(s => s.y < height + 20);
+  stars = stars.filter(s => s.y < height + 40);
 }
 
 function drawStars() {
@@ -42,15 +42,13 @@ function drawStars() {
   stars.forEach(star => {
     ctx.fillStyle = star.color;
     ctx.beginPath();
-    ctx.arc(star.x, star.y, star.size / 2, 0, Math.PI * 2);
-    ctx.fill();
+    ctx.fillRect(star.x, star.y, star.size / 2, star.size / 2);
 
     for (let i = 0; i < star.tail.length; i++) {
       const t = star.tail[i];
       ctx.globalAlpha = i / star.tail.length;
       ctx.beginPath();
-      ctx.arc(t.x, t.y, (star.size / 2) * (i / star.tail.length), 0, Math.PI * 2);
-      ctx.fill();
+      ctx.fillRect(t.x, t.y, 2, 2);
       ctx.globalAlpha = 1;
     }
   });
@@ -74,5 +72,9 @@ function addMessage() {
     div.textContent = `[${now.toLocaleString()}] ${msg}`;
     box.appendChild(div);
     input.value = "";
+
+    // 移除空白提示
+    const empty = document.querySelector(".empty-state");
+    if (empty) empty.remove();
   }
 }

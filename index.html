@@ -8,12 +8,16 @@
 </head>
 <body>
   <canvas id="star-canvas"></canvas>
-  <div class="container">
-    <h1 class="board-title">兔兔的贴贴星球</h1>
-    <div id="messageBox" class="message-box"></div>
-    <div class="input-row">
-      <input type="text" id="messageInput" placeholder="请输入悄悄话~" />
-      <button onclick="addMessage()">发送！</button>
+  <div class="board-wrapper">
+    <h1 class="big-title">🌸 兔兔的贴贴星球 · 公告栏</h1>
+    <div class="message-board">
+      <div id="messageBox" class="messages-area">
+        <div class="empty-state">这里空空的，还没有星星落下哟~ 快来写下第一颗悄悄话！</div>
+      </div>
+      <div class="input-row">
+        <input type="text" id="messageInput" placeholder="在这里输入贴贴悄悄话~" />
+        <button onclick="addMessage()">发送！</button>
+      </div>
     </div>
   </div>
   <script src="script.js"></script>

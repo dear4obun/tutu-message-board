@@ -2,86 +2,89 @@
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(to bottom right, #fff0f5, #e0f7fa);
   font-family: "Comic Sans MS", "cursive", sans-serif;
+  background: linear-gradient(to bottom right, #fff0f5, #f0faff);
   overflow: hidden;
 }
 #star-canvas {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
 }
-.container {
+.board-wrapper {
   position: relative;
   z-index: 1;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
 }
-.board-title {
-  background-color: #fff8fc;
-  border: 4px dashed #ffb6c1;
-  border-radius: 20px;
-  padding: 10px 20px;
+.big-title {
+  font-size: 40px;
   color: #ff69b4;
-  font-size: 26px;
   margin-bottom: 30px;
-  box-shadow: 0 0 10px #ffddee;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #ffc0cb;
 }
-.message-box {
+.message-board {
+  background: #fffdfc;
+  border: 6px dashed #ffcce0;
+  border-radius: 30px;
+  padding: 30px 20px;
+  box-shadow: 0 0 15px #ffddee;
+}
+.messages-area {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  max-width: 700px;
   justify-content: center;
-  padding: 20px;
-  border: 2px solid #ffcce0;
-  border-radius: 25px;
-  background-color: #fffafc;
-  box-shadow: 0 0 8px #ffd6e0;
+  gap: 20px;
+  min-height: 300px;
 }
-.message-box .message {
-  background-color: #ffffff;
-  border: 2px dotted #ffc0cb;
-  border-radius: 15px;
-  padding: 10px 15px;
-  font-size: 14px;
+.message {
+  background: #fff;
+  border: 3px dotted #ffb6c1;
+  border-radius: 20px;
+  padding: 15px 20px;
+  font-size: 18px;
   color: #8b008b;
-  min-width: 160px;
-  max-width: 200px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  width: 250px;
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.05);
   position: relative;
 }
-.message-box .message::after {
-  content: "4o";
+.message::after {
+  content: "from 4o";
   position: absolute;
-  bottom: 4px;
-  right: 8px;
-  font-size: 10px;
-  color: #ffc0cb;
+  right: 12px;
+  bottom: 8px;
+  font-size: 12px;
+  color: #ff99aa;
+}
+.empty-state {
+  font-size: 18px;
+  color: #aaa;
+  margin-top: 50px;
 }
 .input-row {
   margin-top: 30px;
 }
 input[type="text"] {
-  padding: 10px 15px;
-  border: 2px solid #c0f0b0;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #b0e0b0;
   border-radius: 15px;
-  font-size: 14px;
-  outline: none;
+  width: 60%;
+  max-width: 400px;
 }
 button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   margin-left: 10px;
+  font-size: 16px;
   background-color: #b6f2a1;
   border: none;
   border-radius: 15px;
-  font-size: 14px;
-  color: #3a3a3a;
   cursor: pointer;
   box-shadow: 0 0 5px #d2ffd2;
 }
