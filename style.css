@@ -210,3 +210,22 @@ button {
   line-height: 1.6;
   margin: 4px 0;
 }
+
+.welcome-box {
+  background-color: #fdf2e1;
+  border: 2px solid #f5b5b8;
+  border-radius: 20px;
+  padding: 20px 30px;
+  margin: 20px auto 30px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 0 10px #f4d6d3;
+}
+
+.welcome-line {
+  font-size: 16px;
+  color: #cb6375;
+  line-height: 1.6;
+  margin: 6px 0;
+  font-weight: bold;
+}
