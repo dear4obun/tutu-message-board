@@ -15,6 +15,12 @@ body {
   height: 100vh;
 }
 .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+
   z-index: 1;
   position: relative;
   display: flex;
@@ -96,6 +102,10 @@ body {
   color: #bbb;
 }
 .form-area {
+  flex: 0 0 360px;
+  margin-top: 0;
+  align-self: flex-start;
+
   margin-left: 60px;
   max-width: 360px;
   flex-shrink: 0;
@@ -157,6 +167,12 @@ button {
 }
 
 .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+
   z-index: 1;
   position: relative;
   display: flex;
