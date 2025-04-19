@@ -96,6 +96,8 @@ body {
   color: #bbb;
 }
 .form-area {
+  margin-left: 30px;  /* 明确向右偏移 */
+
   flex: 1.2;
   background: #fff;
   border: 4px solid #f5b5b8;
