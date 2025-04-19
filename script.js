@@ -8,7 +8,7 @@ let messages = [
   { text: "贴贴星球宇宙广播站上线~", name: "广播精灵" },
   { text: "晚安星星，记得盖好被子！", name: "晚睡的猫" }
 ];
-const messagesPerPage = 6;
+const messagesPerPage = 4;
 let currentPage = 1;
 
 function addMessage() {
