@@ -20,7 +20,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  padding: 50px;
+  padding: 30px 50px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -28,17 +28,18 @@ body {
   flex: 3;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .board-title {
   font-size: 36px;
   color: #cb6375;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 2px #eb99a7;
+  text-shadow: 1px 1px 2px #f4d6d3;
 }
 .board-box {
   width: 100%;
-  background: #fff;
-  border: 6px dashed #f5b5b8;
+  background: #fdf2e1;
+  border: 6px dashed #eb99a7;
   border-radius: 30px;
   padding: 20px;
   box-shadow: 0 0 12px #f5b5b8;
@@ -52,18 +53,18 @@ body {
 .message {
   width: 220px;
   border: 3px dotted #eb99a7;
-  background-color: #fdf2e1;
+  background-color: #fff;
   border-radius: 20px;
   padding: 15px;
   box-shadow: 3px 3px 10px rgba(235, 153, 167, 0.15);
   position: relative;
   font-size: 15px;
-  color: #cb6375;
+  color: #8b0044;
   white-space: pre-wrap;
 }
 .message .meta {
   font-size: 12px;
-  color: #666;
+  color: #888;
   margin-top: 10px;
 }
 .message::after {
@@ -72,7 +73,7 @@ body {
   right: 10px;
   bottom: 8px;
   font-size: 10px;
-  color: #eb99a7;
+  color: #cb6375;
 }
 .empty {
   font-size: 16px;
@@ -80,16 +81,15 @@ body {
 }
 .form-area {
   flex: 1.2;
-  background: #ffffff;
-  border: 4px solid #f4d6d3;
+  background: #fff;
+  border: 4px solid #f5b5b8;
   border-radius: 30px;
   padding: 20px;
   box-shadow: 0 0 10px #f4d6d3;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  height: fit-content;
-  margin-top: 54px; /* 对齐标题底部 */
+  margin-top: 56px;
 }
 textarea {
   resize: none;
@@ -98,7 +98,7 @@ textarea {
   font-size: 14px;
   border-radius: 10px;
   border: 2px solid #eb99a7;
-  background-color: #fdf2e1;
+  background-color: #fceaff;
 }
 .author-row {
   font-size: 14px;
@@ -113,15 +113,15 @@ input[type="text"] {
   font-size: 14px;
   border-radius: 10px;
   border: 2px solid #f4d6d3;
-  background-color: #fdf2e1;
+  background-color: #fff0f5;
 }
 button {
   padding: 12px;
   font-size: 16px;
-  background: #cb6375;
+  background: #f5b5b8;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  color: #fff;
-  box-shadow: 0 0 5px #f4d6d3;
+  color: #5c3a00;
+  box-shadow: 0 0 5px #ffcdd2;
 }
