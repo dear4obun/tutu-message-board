@@ -1,5 +1,13 @@
 
-let messages = [];
+let messages = [
+  { text: "欢迎来到贴贴星球！这里好可爱~", name: "小月亮" },
+  { text: "今天也要快乐贴贴！", name: "星星兔" },
+  { text: "这地方太治愈了吧！", name: "香香喵" },
+  { text: "偷偷留下我的悄悄话~", name: "南风" },
+  { text: "有人看到这条留言吗？嘿嘿~", name: "未命名" },
+  { text: "贴贴星球宇宙广播站上线~", name: "广播精灵" },
+  { text: "晚安星星，记得盖好被子！", name: "晚睡的猫" }
+];
 const messagesPerPage = 6;
 let currentPage = 1;
 
@@ -10,7 +18,7 @@ function addMessage() {
   messages.unshift({ text, name: name || "匿名" });
   document.getElementById("messageInput").value = "";
   document.getElementById("nameInput").value = "";
-  renderMessages(currentPage);
+  renderMessages(1);
 }
 
 function renderMessages(page) {
