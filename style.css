@@ -158,3 +158,13 @@ button {
   color: #5c3a00;
   box-shadow: 0 0 5px #ffcdd2;
 }
+
+.board-box {
+  width: 100%;
+  background: #fdf2e1;
+  border: 6px dashed #eb99a7;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 0 12px #f5b5b8;
+  min-height: 500px;
+}
