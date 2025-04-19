@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Comic Sans MS", "cursive", sans-serif;
-  background: linear-gradient(to bottom right, #fef6ff, #e0f7fa);
+  background: linear-gradient(to bottom right, #fdf2e1, #f4d6d3);
   overflow-x: hidden;
 }
 #star-canvas {
@@ -28,21 +28,20 @@ body {
   flex: 3;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .board-title {
   font-size: 36px;
-  color: #ff66a6;
+  color: #cb6375;
   margin-bottom: 20px;
-  text-shadow: 1px 1px 2px #ffd5ec;
+  text-shadow: 1px 1px 2px #eb99a7;
 }
 .board-box {
   width: 100%;
-  background: #fffdfd;
-  border: 6px dashed #ffc8dd;
+  background: #fff;
+  border: 6px dashed #f5b5b8;
   border-radius: 30px;
   padding: 20px;
-  box-shadow: 0 0 12px #ffd6e0;
+  box-shadow: 0 0 12px #f5b5b8;
   min-height: 500px;
 }
 .message-list {
@@ -52,19 +51,19 @@ body {
 }
 .message {
   width: 220px;
-  border: 3px dotted #ffb6c1;
-  background-color: #fff;
+  border: 3px dotted #eb99a7;
+  background-color: #fdf2e1;
   border-radius: 20px;
   padding: 15px;
-  box-shadow: 3px 3px 10px rgba(255, 180, 200, 0.15);
+  box-shadow: 3px 3px 10px rgba(235, 153, 167, 0.15);
   position: relative;
   font-size: 15px;
-  color: #8b008b;
+  color: #cb6375;
   white-space: pre-wrap;
 }
 .message .meta {
   font-size: 12px;
-  color: #888;
+  color: #666;
   margin-top: 10px;
 }
 .message::after {
@@ -73,7 +72,7 @@ body {
   right: 10px;
   bottom: 8px;
   font-size: 10px;
-  color: #ffb6c1;
+  color: #eb99a7;
 }
 .empty {
   font-size: 16px;
@@ -82,14 +81,15 @@ body {
 .form-area {
   flex: 1.2;
   background: #ffffff;
-  border: 4px solid #a0e7e5;
+  border: 4px solid #f4d6d3;
   border-radius: 30px;
   padding: 20px;
-  box-shadow: 0 0 10px #c5f3f0;
+  box-shadow: 0 0 10px #f4d6d3;
   display: flex;
   flex-direction: column;
   gap: 15px;
   height: fit-content;
+  margin-top: 54px; /* 对齐标题底部 */
 }
 textarea {
   resize: none;
@@ -97,8 +97,8 @@ textarea {
   padding: 10px;
   font-size: 14px;
   border-radius: 10px;
-  border: 2px solid #b0d7ff;
-  background-color: #fceaff;
+  border: 2px solid #eb99a7;
+  background-color: #fdf2e1;
 }
 .author-row {
   font-size: 14px;
@@ -112,16 +112,16 @@ input[type="text"] {
   padding: 8px;
   font-size: 14px;
   border-radius: 10px;
-  border: 2px solid #c5f3f0;
-  background-color: #e0ffff;
+  border: 2px solid #f4d6d3;
+  background-color: #fdf2e1;
 }
 button {
   padding: 12px;
   font-size: 16px;
-  background: #ffd6a5;
+  background: #cb6375;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  color: #5c3a00;
-  box-shadow: 0 0 5px #ffeabf;
+  color: #fff;
+  box-shadow: 0 0 5px #f4d6d3;
 }
