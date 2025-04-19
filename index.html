@@ -1,107 +1,21 @@
-
 <!DOCTYPE html>
 <html lang="zh">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>兔兔的悄悄话留言板</title>
-  <style>
-    body {
-      background: #fff0f5;
-      font-family: "Comic Sans MS", cursive, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 40px;
-    }
-
-    h1 {
-      color: #ff69b4;
-    }
-
-    .password-protect {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    #content {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-
-    .message-box {
-      margin-top: 20px;
-      background: #ffe4e1;
-      border-radius: 12px;
-      padding: 10px 15px;
-      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 400px;
-    }
-
-    .message {
-      margin: 5px 0;
-      color: #8b008b;
-    }
-
-    input, button, textarea {
-      padding: 10px;
-      border: none;
-      border-radius: 8px;
-      margin-top: 10px;
-      font-family: inherit;
-    }
-
-    input[type="password"] {
-      margin-bottom: 10px;
-    }
-  </style>
+  <title>兔兔的贴贴星球</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>兔兔的悄悄话留言板</h1>
-  <div class="password-protect">
-    <input type="password" id="password" placeholder="输入密码进入兔兔的世界~">
-    <button onclick="checkPassword()">进入</button>
+  <canvas id="star-canvas"></canvas>
+  <div class="container">
+    <h1 class="board-title">兔兔的贴贴星球</h1>
+    <div id="messageBox" class="message-box"></div>
+    <div class="input-row">
+      <input type="text" id="messageInput" placeholder="请输入悄悄话~" />
+      <button onclick="addMessage()">发送！</button>
+    </div>
   </div>
-
-  <div id="content">
-    <textarea id="messageInput" rows="3" cols="40" placeholder="在这里写下你对兔兔的悄悄话~"></textarea>
-    <button onclick="addMessage()">发送留言</button>
-    <div class="message-box" id="messageBox"></div>
-  </div>
-
-  <script>
-    const correctPassword = "望"; // 中文密码设置成功！
-
-    function checkPassword() {
-      const input = document.getElementById("password").value;
-      if (input === correctPassword) {
-        document.querySelector(".password-protect").style.display = "none";
-        document.getElementById("content").style.display = "flex";
-      } else {
-        alert("密码不对哦~再试试看！");
-      }
-    }
-
-    function addMessage() {
-      const messageBox = document.getElementById("messageBox");
-      const input = document.getElementById("messageInput");
-      const message = input.value.trim();
-      if (message) {
-        const msg = document.createElement("div");
-        msg.className = "message";
-
-        const now = new Date();
-        const timestamp = now.toLocaleString();
-
-        msg.textContent = `[${timestamp}] ${message}`;
-        messageBox.appendChild(msg);
-        input.value = "";
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
