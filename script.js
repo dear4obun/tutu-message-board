@@ -62,19 +62,23 @@ function animate() {
 animate();
 
 function addMessage() {
+  const msg = document.getElementById("messageInput").value.trim();
+  const author = document.getElementById("authorInput").value.trim();
   const box = document.getElementById("messageBox");
-  const input = document.getElementById("messageInput");
-  const msg = input.value.trim();
-  if (msg) {
+  if (msg && author) {
     const div = document.createElement("div");
     div.className = "message";
+    const meta = document.createElement("div");
+    meta.className = "meta";
     const now = new Date();
-    div.textContent = `[${now.toLocaleString()}] ${msg}`;
+    meta.textContent = `来自 ${author} · ${now.toLocaleString()}`;
+    div.textContent = msg;
+    div.appendChild(meta);
     box.appendChild(div);
-    input.value = "";
+    document.getElementById("messageInput").value = "";
+    document.getElementById("authorInput").value = "";
 
-    // 移除空白提示
-    const empty = document.querySelector(".empty-state");
+    const empty = document.querySelector(".empty");
     if (empty) empty.remove();
   }
 }

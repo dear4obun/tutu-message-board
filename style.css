@@ -2,8 +2,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Comic Sans MS", "cursive", sans-serif;
   background: linear-gradient(to bottom right, #fff0f5, #f0faff);
+  font-family: "Comic Sans MS", "cursive", sans-serif;
   overflow: hidden;
 }
 #star-canvas {
@@ -14,77 +14,95 @@ body {
   width: 100%;
   height: 100%;
 }
-.board-wrapper {
-  position: relative;
+.main-layout {
   z-index: 1;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 20px;
-  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 50px;
 }
-.big-title {
-  font-size: 40px;
-  color: #ff69b4;
-  margin-bottom: 30px;
-  font-weight: bold;
-  text-shadow: 2px 2px 4px #ffc0cb;
-}
-.message-board {
-  background: #fffdfc;
+.board-area {
+  width: 60%;
+  background: #fff;
   border: 6px dashed #ffcce0;
   border-radius: 30px;
-  padding: 30px 20px;
-  box-shadow: 0 0 15px #ffddee;
+  padding: 20px;
+  box-shadow: 0 0 10px #ffddee;
+  min-height: 500px;
 }
-.messages-area {
+.form-area {
+  width: 30%;
+  background: #fff;
+  border: 4px solid #b6f2a1;
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 0 10px #d0ffd0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.board-title {
+  text-align: center;
+  font-size: 36px;
+  color: #ff69b4;
+  margin-bottom: 20px;
+}
+.message-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
-  min-height: 300px;
 }
 .message {
-  background: #fff;
+  width: 200px;
   border: 3px dotted #ffb6c1;
+  background-color: #fff;
   border-radius: 20px;
-  padding: 15px 20px;
-  font-size: 18px;
-  color: #8b008b;
-  width: 250px;
-  box-shadow: 4px 4px 10px rgba(0,0,0,0.05);
+  padding: 15px;
+  box-shadow: 3px 3px 8px rgba(0,0,0,0.05);
   position: relative;
+  font-size: 14px;
+  color: #8b008b;
+  white-space: pre-wrap;
+}
+.message .meta {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
 }
 .message::after {
-  content: "from 4o";
+  content: "4o";
   position: absolute;
-  right: 12px;
+  right: 10px;
   bottom: 8px;
-  font-size: 12px;
-  color: #ff99aa;
+  font-size: 10px;
+  color: #ffc0cb;
 }
-.empty-state {
-  font-size: 18px;
-  color: #aaa;
-  margin-top: 50px;
+.empty {
+  font-size: 16px;
+  color: #bbb;
 }
-.input-row {
-  margin-top: 30px;
+textarea {
+  resize: none;
+  height: 150px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 2px solid #cde;
 }
 input[type="text"] {
-  padding: 12px 20px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
   border: 2px solid #b0e0b0;
-  border-radius: 15px;
-  width: 60%;
-  max-width: 400px;
 }
 button {
-  padding: 12px 25px;
-  margin-left: 10px;
+  padding: 12px;
   font-size: 16px;
-  background-color: #b6f2a1;
+  background: #b6f2a1;
   border: none;
-  border-radius: 15px;
+  border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 0 5px #d2ffd2;
+  box-shadow: 0 0 5px #cfc;
 }
