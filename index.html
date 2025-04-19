@@ -1,35 +1,25 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>兔兔的贴贴星球</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="star-canvas"></canvas>
-  <h1 class="main-title">兔兔的贴贴星球</h1>
-  
+  <h1 class="title">兔兔的贴贴星球</h1>
   <div class="welcome-box">
     <p class="welcome-line">嘿嘿嘿！欢迎掉进兔兔星球，这里禁止大声喧哗，但可以偷偷贴贴！！</p>
     <p class="welcome-line">本星球已准备好接收宇宙悄悄话和甜甜贴贴~ 快把你的小秘密贴上来！</p>
   </div>
   <div class="container">
-
-    <div class="board-area">
-      <div class="board-shell">
-        <div class="message-list" id="messageBox">
-          <div class="empty">✨ 这里还没有留言哦~ 快来写下你的悄悄话吧 ✨</div>
-        </div>
-      </div>
+    <div class="message-board">
+      <div id="messageList" class="message-list"></div>
+      <div id="pagination" class="pagination"></div>
     </div>
     <div class="form-area">
-      <textarea id="messageInput" placeholder="输入留言区~"></textarea>
-      <div class="author-row">
-        留言人：
-        <input type="text" id="authorInput" placeholder="请输入你的名字" />
-      </div>
-      <button onclick="addMessage()">发送！</button>
+      <textarea id="messageInput" placeholder="写点什么吧~"></textarea>
+      <input id="nameInput" placeholder="署名（可选）" />
+      <button onclick="addMessage()">贴贴！</button>
     </div>
   </div>
   <script src="script.js"></script>
