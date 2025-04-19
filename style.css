@@ -194,7 +194,19 @@ button {
   justify-content: flex-start;
 }
 
-.form-area {
-  max-width: 360px;
-  margin-left: 40px;
+.welcome-box {
+  background-color: #fff0f4;
+  border: 3px dashed #f5b5b8;
+  border-radius: 30px;
+  padding: 20px 30px;
+  margin: 20px auto 30px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 0 12px #f4d6d3;
+}
+.welcome-line {
+  font-size: 16px;
+  color: #cb6375;
+  line-height: 1.6;
+  margin: 4px 0;
 }
