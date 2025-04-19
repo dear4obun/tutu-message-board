@@ -1,122 +1,85 @@
 
 body {
-  font-family: "Comic Sans MS", "CuteFont", sans-serif;
-  background-color: #fdf2e1;
-  color: #333;
+  background: #FDF2E1;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 .title {
   text-align: center;
   font-size: 32px;
-  padding: 20px;
-  color: #cb6375;
+  color: #CB6375;
 }
-.welcome-box {
-  background-color: #fff0f4;
-  border: 2px solid #f5b5b8;
+.welcome {
+  background: #F4D6D3;
+  padding: 10px 20px;
+  margin: 10px auto;
+  width: fit-content;
   border-radius: 20px;
-  padding: 20px 30px;
-  margin: 20px auto;
-  width: 80%;
   text-align: center;
-  box-shadow: 0 0 10px #f4d6d3;
+  color: #CB6375;
+  font-weight: bold;
 }
-.welcome-line {
-  font-size: 16px;
-  color: #cb6375;
-  line-height: 1.6;
-  margin: 4px 0;
-}
-.container {
+.board-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   gap: 40px;
-  padding: 20px;
+  margin-top: 20px;
 }
-.message-board {
-  width: 60%;
-  background: #fff;
-  border: 2px dashed #f5b5b8;
-  border-radius: 20px;
+.message-display {
+  background: #FFF;
+  border-radius: 30px;
+  border: 3px solid #F5B5B8;
   padding: 20px;
-  max-height: 500px;
-  overflow: hidden;
-}
-.message-list {
+  width: 500px;
+  height: 400px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 240px);
-  grid-gap: 20px;
-  justify-content: flex-start;
-  max-height: 520px;
-  overflow: hidden;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  position: relative;
+}
+.message-card {
+  background: #FDF2E1;
+  border: 2px solid #EB99A7;
+  border-radius: 20px;
   padding: 10px;
-
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.message {
-  background-color: #fdf2e1;
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid #f4d6d3;
-  width: 220px;
-  height: 120px;
-  overflow-wrap: break-word;
-  white-space: pre-wrap;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  background-color: #fdf2e1;
-  padding: 12px;
-  border-radius: 12px;
-  border: 1px solid #f4d6d3;
-}
-.form-area {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 300px;
-  min-height: 200px;
-  visibility: visible;
-
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 300px;
-}
-textarea, input {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-}
-button {
-  background-color: #cb6375;
-  color: white;
-  border: none;
-  padding: 8px;
-  border-radius: 12px;
-  cursor: pointer;
+  font-size: 14px;
 }
 .pagination {
-  margin-top: 20px;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 16px;
+  color: #CB6375;
+}
+.message-input {
+  background: #FFF;
+  border-radius: 20px;
+  border: 3px solid #F4D6D3;
+  padding: 20px;
+  width: 300px;
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
 }
-.page-button {
-  padding: 6px 12px;
+textarea {
+  resize: none;
+  height: 150px;
+  border: 2px solid #F5B5B8;
   border-radius: 10px;
-  background-color: #f5b5b8;
-  color: white;
-  border: none;
-  cursor: pointer;
 }
-.page-button.active {
-  background-color: #cb6375;
+input {
+  height: 30px;
+  border: 2px solid #F5B5B8;
+  border-radius: 10px;
+  padding-left: 10px;
+}
+button {
+  background: #EB99A7;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
 }
