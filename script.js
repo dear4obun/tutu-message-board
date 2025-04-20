@@ -125,7 +125,7 @@ document.getElementById('message-form').addEventListener('submit', function(e) {
   const board = document.getElementById('message-board');
 
   const triggerWords = ['望', '表哥', '望老师'];
-  if (triggerWords.includes(name) && message === '') {
+  if (triggerWords.includes(name) && message.trim() === '') {
     const reply = getWangReply();
     const bubble = document.createElement('div');
     bubble.className = 'message';
