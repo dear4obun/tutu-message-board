@@ -125,3 +125,11 @@ input:focus, textarea:focus {
   height: auto;
   flex-grow: 0;
 }
+
+
+.left-column {
+  background-color: #fff8f8;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
