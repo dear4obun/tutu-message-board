@@ -28,17 +28,7 @@ body {
   max-width: 1200px;
   margin: auto;
 }
-.message-display {
-  flex: 2;
-  background: #fff;
-  border: 4px dashed #eb99a7;
-  border-radius: 30px;
-  padding: 20px 20px 10px 20px;
-  min-height: 300px;
-  max-height: 600px;
-  overflow: hidden;
-  position: relative;
-}
+
 
 .message-card {
   background: #f4d6d3;
@@ -128,6 +118,17 @@ input:focus, textarea:focus {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
 }
 
+.message-display {
+  flex: 2;
+  background: #fff;
+  border: 4px dashed #eb99a7;
+  border-radius: 30px;
+  padding: 20px 20px 10px 20px;
+  min-height: 300px;
+  max-height: 600px;
+  overflow: hidden;
+  position: relative;
+}
 
 .message-list {
   display: grid;
@@ -135,8 +136,4 @@ input:focus, textarea:focus {
   grid-template-rows: 260px 260px;
   gap: 20px 5%;
   justify-content: center;
-  background: white;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
