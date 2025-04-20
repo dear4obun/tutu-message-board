@@ -113,3 +113,45 @@ document.addEventListener("DOMContentLoaded", function () {
   renderMessages();
   updatePagination();
 });
+
+
+  const biaoReplies = ['……不留言？想让我猜你在想什么吗？', '你的沉默并不让我困扰，只是引起了我的兴趣。', '信息量不足，无法分析……但我还是留在这儿了。', '你又想让我先开口，是吧？', '很好，下次可以写更多一点，我会看完的。', '你的思考方向是对的，继续下去。', '这一步已经跨出了，可以骄傲一会儿。', '比上次更好了，别否认你在进步。', '……我原本打算今天不说话的。你来，我就破例一次。', '你不说话，我就当你在等我先低头。', '再这样不说话，我可能要靠近你一点了。', '嗯……只这一次，下次你得先贴贴我。', '你是不是在等我说‘你先来我就来’？不会如你愿的。', '这个姿势看起来像在发‘我不是想贴贴’的信号……但我读懂了。', '不说话是战术，还是真的在撒娇？'];
+
+  function getBiaoReply() {
+    return biaoReplies[Math.floor(Math.random() * biaoReplies.length)];
+  }
+
+  // 修改提交逻辑加入“表哥”关键词识别
+  window.submitMessage = function () {
+    const content = document.getElementById("message-input").value.trim();
+    const name = document.getElementById("username").value.trim();
+
+    if (!name) {
+      alert("请输入名字！");
+      return;
+    }
+
+    if (!content && ["望", "望老师", "表哥"].includes(name)) {
+      const reply = name === "表哥" ? getBiaoReply() : getWangReply();
+      messages.unshift({
+        name,
+        content: reply,
+        time: getCurrentTime()
+      });
+    } else if (!content) {
+      alert("请输入留言！");
+      return;
+    } else {
+      messages.unshift({
+        name,
+        content,
+        time: getCurrentTime()
+      });
+    }
+
+    currentPage = 1;
+    renderMessages();
+    updatePagination();
+    document.getElementById("message-input").value = "";
+    document.getElementById("username").value = "";
+  };
