@@ -53,3 +53,44 @@ document.addEventListener("DOMContentLoaded", function () {
     form.reset();
   });
 });
+
+function addMessage(content, sender = '匿名', time = null) {
+    const messageList = document.getElementById("message-list");
+    const messageItem = document.createElement("div");
+    messageItem.className = "message-item";
+    const now = time || new Date();
+    const timestamp = `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear().toString().slice(-2)}/${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+
+    messageItem.innerHTML = `
+        <p>${content}</p>
+        <div class="meta">
+            <span class="sender">— ${sender}</span>
+            <span class="time">🕒 ${timestamp}</span>
+        </div>
+    `;
+    messageList.appendChild(messageItem);
+}
+
+
+document.getElementById("message-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const message = document.getElementById("message").value.trim();
+    if (!name) return;
+
+    if (!message && ['望', '望老师', '表哥'].includes(name)) {
+        const replies = {
+            "望": ["今天也要加油哦~", "你写不写我可要先睡啦~", "……嗯？你在叫我？"],
+            "望老师": ["……今天也偷懒了吗？", "该学习啦，别让我抓到你在摸鱼。", "老师看着你呢。"],
+            "表哥": ["给你送橘子味奶糖了！", "表哥你在忙嘛？我又来找你啦~", "……你是不是又不回我消息了。"]
+        };
+        const replyList = replies[name];
+        const reply = replyList[Math.floor(Math.random() * replyList.length)];
+        addMessage(reply, "望");
+    } else if (message) {
+        addMessage(message, name);
+    }
+
+    document.getElementById("message").value = "";
+    document.getElementById("name").value = "";
+});
