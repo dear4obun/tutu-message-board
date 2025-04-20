@@ -77,13 +77,14 @@ body {
 }
 .input-area {
   flex: 1;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   background: #fff;
   border-radius: 20px;
-  height: auto;
-  padding-bottom: 1.5rem;
+  padding: 20px;
+}
 textarea {
   resize: none;
   height: 150px;
