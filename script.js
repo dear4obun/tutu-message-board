@@ -1,5 +1,5 @@
+
 document.addEventListener("DOMContentLoaded", function() {
-  // 望的自动回复语录
   const gentleReplies = [
     "嗯，我在。今天也来看看你。",
     "是不是……只是想让我说句话？",
@@ -26,15 +26,14 @@ document.addEventListener("DOMContentLoaded", function() {
     return pool[Math.floor(Math.random() * pool.length)];
   }
 
-  const form = document.getElementById('message-form');
-  const board = document.getElementById('message-board');
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('name-input').value.trim();
+  window.submitMessage = function() {
+    const name = document.getElementById('username').value.trim();
     const message = document.getElementById('message-input').value.trim();
+    const container = document.getElementById('message-list');
     if (!name) return;
+
     let content, sender;
-    if (name === '望' && message === '') {
+    if (['望', '望老师', '表哥'].includes(name) && message === '') {
       content = getWangReply();
       sender = '望';
     } else if (message) {
@@ -43,10 +42,13 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
       return;
     }
+
     const bubble = document.createElement('div');
     bubble.className = 'message';
     bubble.innerHTML = `<strong>${sender}</strong><br>${content}`;
-    board.appendChild(bubble);
-    form.reset();
-  });
+    container.appendChild(bubble);
+
+    document.getElementById('username').value = '';
+    document.getElementById('message-input').value = '';
+  };
 });
