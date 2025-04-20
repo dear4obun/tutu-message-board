@@ -229,8 +229,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function submitMessage() {
-  const nameInput = document.getElementById("name");
-  const contentInput = document.getElementById("content");
+  const nameInput = document.getElementById("username");
+  const contentInput = document.getElementById("message-input");
   const name = nameInput.value.trim();
   const content = contentInput.value.trim();
 
