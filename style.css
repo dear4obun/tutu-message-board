@@ -119,14 +119,3 @@ input:focus, textarea:focus {
   outline: none;
   border: 2px solid #EB99A7;
 }
-
-
-#message-board {
-  background: #FDF2E1;
-  border: 2px dashed #EB99A7;
-  padding: 1rem;
-  border-radius: 1rem;
-  height: 600px;
-  overflow-y: auto;
-  margin-bottom: 1rem;
-}
