@@ -118,6 +118,7 @@ window.onload = renderMessages;
 
 
 // 🐰 表哥·望出没触发点
+// 🐰 表哥·望出没触发点
 document.getElementById('message-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const name = document.getElementById('name-input').value.trim();
@@ -132,8 +133,13 @@ document.getElementById('message-form').addEventListener('submit', function(e) {
     bubble.innerHTML = `<strong>望</strong><br>${reply}`;
     board.appendChild(bubble);
     document.getElementById('message-form').reset();
-    return;
+    return; // 阻止原本逻辑执行
   }
 
-  // 继续原本逻辑（如有）
+  // 👉 原始留言处理（非“望”触发情况）
+  const bubble = document.createElement('div');
+  bubble.className = 'message';
+  bubble.innerHTML = `<strong>${name}</strong><br>${message}`;
+  board.appendChild(bubble);
+  document.getElementById('message-form').reset();
 });
