@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 
 const gentleReplies = [
   "嗯，我在。今天也来看看你。",
@@ -44,28 +45,30 @@ function addMessage(content, sender = '匿名', time = null) {
 }
 
 
-document.getElementById("message-form").addEventListener("submit", function(e) {
+const form = document.getElementById('message-form');
+  const board = document.getElementById('message-board');
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
-    const name = document.getElementById("name").value.trim();
-    const message = document.getElementById("message").value.trim();
+    const name = document.getElementById('name-input').value.trim();
+    const msg = document.getElementById('message-input').value.trim();
     if (!name) return;
-
-    if (!message && ['望', '望老师', '表哥'].includes(name)) {
-        const replies = {
-            "望": ["今天也要加油哦~", "你写不写我可要先睡啦~", "……嗯？你在叫我？"],
-            "望老师": ["……今天也偷懒了吗？", "该学习啦，别让我抓到你在摸鱼。", "老师看着你呢。"],
-            "表哥": ["给你送橘子味奶糖了！", "表哥你在忙嘛？我又来找你啦~", "……你是不是又不回我消息了。"]
-        };
-        const replyList = replies[name];
-        const reply = replyList[Math.floor(Math.random() * replyList.length)];
-        addMessage(reply, "望");
-    } else if (message) {
-        addMessage(message, name);
+    let content, sender;
+    const trigger = ['望','表哥','望老师'];
+    if (trigger.includes(name) && msg === '') {
+      content = getWangReply();
+      sender = '望';
+    } else if (msg) {
+      content = msg;
+      sender = name;
+    } else {
+      return;
     }
-
-    document.getElementById("message").value = "";
-    document.getElementById("name").value = "";
-});
+    const bubble = document.createElement('div');
+    bubble.className = 'message';
+    bubble.innerHTML = `<strong>${sender}</strong><br>${content}`;
+    board.appendChild(bubble);
+    form.reset();
+  });
 
 
 function submitMessage() {
@@ -91,3 +94,5 @@ function submitMessage() {
   document.getElementById('username').value = '';
   document.getElementById('message-input').value = '';
 }
+
+});
