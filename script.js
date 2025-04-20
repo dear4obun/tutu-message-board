@@ -36,18 +36,20 @@ document.addEventListener("DOMContentLoaded", function () {
     const message = messageInput.value.trim();
     const triggerWords = ['望', '表哥', '望老师'];
 
+    if (!name) return;
+
+    const bubble = document.createElement('div');
+    bubble.className = 'message';
+
     if (triggerWords.includes(name) && message === '') {
-      const reply = getWangReply();
-      const bubble = document.createElement('div');
-      bubble.className = 'message';
-      bubble.innerHTML = `<strong>望</strong><br>${reply}`;
-      board.appendChild(bubble);
-    } else if (name && message) {
-      const bubble = document.createElement('div');
-      bubble.className = 'message';
+      bubble.innerHTML = `<strong>望</strong><br>${getWangReply()}`;
+    } else if (message) {
       bubble.innerHTML = `<strong>${name}</strong><br>${message}`;
-      board.appendChild(bubble);
+    } else {
+      return;
     }
+
+    board.appendChild(bubble);
     form.reset();
   });
 });
