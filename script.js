@@ -1,5 +1,18 @@
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+  const messagesPerPage = 4;
+  let currentPage = 1;
+  const messageList = document.getElementById("message-list");
+  const pagination = document.getElementById("pagination");
+  const defaultMessages = [
+    { name: "luobo", content: "你好呀这里是测试留言1", time: "25/4/20/10:44" },
+    { name: "luobo", content: "你好呀这里是测试留言2", time: "25/4/20/10:44" },
+    { name: "luobo", content: "你好呀这里是测试留言3", time: "25/4/20/10:44" },
+    { name: "luobo", content: "你好呀这里是测试留言4", time: "25/4/20/10:44" },
+    { name: "luobo", content: "你好呀这里是测试留言5", time: "25/4/20/10:44" }
+  ];
+  let messages = [...defaultMessages];
+
   const gentleReplies = [
     "嗯，我在。今天也来看看你。",
     "是不是……只是想让我说句话？",
@@ -26,62 +39,77 @@ document.addEventListener("DOMContentLoaded", function() {
     return pool[Math.floor(Math.random() * pool.length)];
   }
 
-  
-  const messagesPerPage = 4;
-  const pagination = document.querySelector(".pagination");
+  function getCurrentTime() {
+    const now = new Date();
+    return `${now.getDate()}/${now.getMonth() + 1}/${now.getFullYear().toString().slice(2)}/${now.getHours()}:${now.getMinutes().toString().padStart(2, "0")}`;
+  }
+
+  function renderMessages() {
+    messageList.innerHTML = "";
+    const start = (currentPage - 1) * messagesPerPage;
+    const pageMessages = messages.slice(start, start + messagesPerPage);
+    pageMessages.forEach((msg) => {
+      const card = document.createElement("div");
+      card.className = "message-card";
+      card.innerHTML = `
+        <div>${msg.content}</div>
+        <div style="margin-top: 8px;">— ${msg.name}</div>
+        <div style="font-size: 0.8em; color: rgba(153,153,153,0.6); margin-top: 2px;">🕒 ${msg.time}</div>
+      `;
+      messageList.appendChild(card);
+    });
+  }
+
   function updatePagination() {
-    const messages = document.querySelectorAll(".message-card");
-    const pages = Math.ceil(messages.length / messagesPerPage);
     pagination.innerHTML = "";
-    let start = Math.max(1, currentPage - 2);
-    let end = Math.min(pages, start + 4);
-    for (let i = start; i <= end; i++) {
+    const totalPages = Math.ceil(messages.length / messagesPerPage);
+    for (let i = 1; i <= totalPages; i++) {
       const span = document.createElement("span");
       span.innerText = i;
       span.className = "page-number";
       if (i === currentPage) span.classList.add("active");
       span.addEventListener("click", () => {
         currentPage = i;
-        showPage(currentPage);
+        renderMessages();
         updatePagination();
       });
       pagination.appendChild(span);
     }
   }
-  function showPage(page) {
-    const messages = document.querySelectorAll(".message-card");
-    messages.forEach((msg, i) => {
-      msg.style.display = (i >= (page - 1) * messagesPerPage && i < page * messagesPerPage) ? "block" : "none";
-    });
-  }
-  let currentPage = 1;
-  showPage(currentPage);
-  updatePagination();
 
+  window.submitMessage = function () {
+    const content = document.getElementById("message-input").value.trim();
+    const name = document.getElementById("username").value.trim();
 
-  window.submitMessage = function() {
-    const name = document.getElementById('username').value.trim();
-    const message = document.getElementById('message-input').value.trim();
-    const container = document.getElementById('message-list');
-    if (!name) return;
-
-    let content, sender;
-    if (['望', '望老师', '表哥'].includes(name) && message === '') {
-      content = getWangReply();
-      sender = '望';
-    } else if (message) {
-      content = message;
-      sender = name;
-    } else {
+    if (!name) {
+      alert("请输入名字！");
       return;
     }
 
-    const bubble = document.createElement('div');
-    bubble.className = 'message-card';
-    bubble.innerHTML = `<strong>${sender}</strong><br>${content}`;
-    container.appendChild(bubble);
+    if (!content && ["望", "望老师", "表哥"].includes(name)) {
+      messages.unshift({
+        name: "望",
+        content: getWangReply(),
+        time: getCurrentTime()
+      });
+    } else if (!content) {
+      alert("请输入留言！");
+      return;
+    } else {
+      messages.unshift({
+        name,
+        content,
+        time: getCurrentTime()
+      });
+    }
 
-    document.getElementById('username').value = '';
-    document.getElementById('message-input').value = '';
+    currentPage = 1;
+    renderMessages();
+    updatePagination();
+    document.getElementById("message-input").value = "";
+    document.getElementById("username").value = "";
   };
+
+  renderMessages();
+  updatePagination();
 });
