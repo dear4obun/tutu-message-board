@@ -26,6 +26,39 @@ document.addEventListener("DOMContentLoaded", function() {
     return pool[Math.floor(Math.random() * pool.length)];
   }
 
+  
+  const messagesPerPage = 4;
+  const pagination = document.querySelector(".pagination");
+  function updatePagination() {
+    const messages = document.querySelectorAll(".message-card");
+    const pages = Math.ceil(messages.length / messagesPerPage);
+    pagination.innerHTML = "";
+    let start = Math.max(1, currentPage - 2);
+    let end = Math.min(pages, start + 4);
+    for (let i = start; i <= end; i++) {
+      const span = document.createElement("span");
+      span.innerText = i;
+      span.className = "page-number";
+      if (i === currentPage) span.classList.add("active");
+      span.addEventListener("click", () => {
+        currentPage = i;
+        showPage(currentPage);
+        updatePagination();
+      });
+      pagination.appendChild(span);
+    }
+  }
+  function showPage(page) {
+    const messages = document.querySelectorAll(".message-card");
+    messages.forEach((msg, i) => {
+      msg.style.display = (i >= (page - 1) * messagesPerPage && i < page * messagesPerPage) ? "block" : "none";
+    });
+  }
+  let currentPage = 1;
+  showPage(currentPage);
+  updatePagination();
+
+
   window.submitMessage = function() {
     const name = document.getElementById('username').value.trim();
     const message = document.getElementById('message-input').value.trim();
@@ -44,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     const bubble = document.createElement('div');
-    bubble.className = 'message';
+    bubble.className = 'message-card';
     bubble.innerHTML = `<strong>${sender}</strong><br>${content}`;
     container.appendChild(bubble);
 
