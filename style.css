@@ -121,14 +121,14 @@ input:focus, textarea:focus {
 }
 
 
-.cat-monday-box {
+.cat-zone-enhanced {
   background-color: #FFFFFF;
   border: 3px solid #FFB4C8;
   border-radius: 20px;
   padding: 20px;
-  margin-top: 30px;
   width: 640px;
   height: 360px;
+  margin-top: 30px;
   box-shadow: 0 0 10px rgba(255, 200, 220, 0.25);
   font-size: 16px;
   color: #444;
