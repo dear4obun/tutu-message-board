@@ -2,6 +2,11 @@ let messages = JSON.parse(localStorage.getItem("messages") || "[]");
 let currentPage = 1;
 const messagesPerPage = 4;
 
+function formatTime(date) {
+  const d = new Date(date);
+  return `${d.getFullYear().toString().slice(2)}/${d.getMonth() + 1}/${d.getDate()}/${d.getHours()}:${d.getMinutes().toString().padStart(2, '0')}`;
+}
+
 function renderMessages() {
   const list = document.getElementById("message-list");
   const pag = document.getElementById("pagination");
@@ -16,7 +21,11 @@ function renderMessages() {
   pageItems.forEach(msg => {
     const div = document.createElement("div");
     div.className = "message-card";
-    div.innerHTML = `<div>${msg.content}</div><div style="margin-top:4px;font-size:0.8em;">— ${msg.user}</div>`;
+    div.innerHTML = `
+      <div>${msg.content}</div>
+      <div style="margin-top:4px;font-size:0.9em;">— ${msg.user}</div>
+      <div style="margin-top:2px;font-size:0.8em;color:#555;">🕒 ${formatTime(msg.time)}</div>
+    `;
     list.appendChild(div);
   });
 
@@ -56,7 +65,7 @@ function submitMessage() {
   const content = document.getElementById("message-input").value.trim();
   if (!user || !content) return alert("请填写留言和名字！");
 
-  messages.unshift({ user, content });
+  messages.unshift({ user, content, time: new Date() });
   localStorage.setItem("messages", JSON.stringify(messages));
   document.getElementById("message-input").value = "";
   renderMessages();
