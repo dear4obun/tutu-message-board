@@ -121,8 +121,8 @@ input:focus, textarea:focus {
 }
 
 
-.cat-area {
-  background-color: #FFFFFF;
+.cat-zone-right {
+  background-color: #ffffff;
   border: 3px solid #FFB4C8;
   border-radius: 20px;
   padding: 20px;
