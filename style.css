@@ -130,8 +130,13 @@ input:focus, textarea:focus {
 
 
 .message-list {
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: 260px 260px;
+  gap: 20px 5%;
+  justify-content: center;
   background: white;
-  padding: 20px;
   border-radius: 20px;
+  padding: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
