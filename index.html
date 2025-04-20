@@ -6,27 +6,23 @@
   <title>兔兔的贴贴星球</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <h1 class="page-title">🌸 兔兔的贴贴星球 by 望 × 一生。</h1>
+<body style="font-family: 'Microsoft YaHei', '黑体', sans-serif;">
+  <h1 class="site-title">兔兔的贴贴星球</h1>
   <div class="welcome-box">
-    <p class="welcome-text">
-      嘿嘿嘿！欢迎掉进兔兔星球，这里禁止大声喧哗，但可以偷偷贴贴！！<br>
-      本星球已准备好接收宇宙悄悄话和甜甜贴贴~ 快把你的小秘密贴上来！
-    </p>
+    <p>嘿嘿嘿！欢迎掉进兔兔星球，这里禁止大声喧哗，但可以偷偷贴贴！！</p>
+    <p>本星球已准备好接收宇宙悄悄话和甜甜贴贴~ 快把你的小秘密贴上来！</p>
   </div>
-  <div id="main-container">
-    <div id="message-board-container">
-      <div id="message-board" class="scrollable-box">
-<div class="message"><strong>🌸 星星</strong><br>这里可以留下你的小秘密哦！</div>
-</div>
+  <div class="main-container">
+    <div class="message-display" style="height: 600px;">
+      <div class="pagination" id="pagination" style="text-align: left; padding-bottom: 8px;"></div>
+      <div class="message-list" id="message-list" style="display: grid; grid-template-columns: 45% 45%; grid-template-rows: 260px 260px; gap: 20px 5%; justify-content: center;"></div>
     </div>
-    <form id="message-form" novalidate>
-      <div class="input-area">
-        <textarea id="message-input" placeholder="输入留言区~"></textarea>
-        <input type="text" id="name-input" placeholder="请留下你的名字~" />
-        <button type="submit">发送</button>
-      </div>
-    </form>
+    <div class="input-area">
+      <textarea id="message-input" placeholder="输入留言区~"></textarea>
+      <input type="text" id="username" placeholder="请输入你的名字" />
+      <button onclick="submitMessage()">发送！</button>
+    </div>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
