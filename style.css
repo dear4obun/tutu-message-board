@@ -135,3 +135,19 @@ input:focus, textarea:focus {
   font-size: 16px;
   color: #444;
 }
+
+.cat-zone-revision {
+  position: absolute;
+  top: 390px;
+  left: 1028px;
+  width: 640px;
+  height: 360px;
+  background-color: #FFFFFF;
+  border: 3px solid #FFB4C8;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(255, 200, 220, 0.3);
+  font-size: 16px;
+  color: #444;
+  z-index: 5;
+}
