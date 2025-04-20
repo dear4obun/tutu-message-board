@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -12,12 +13,12 @@
     <p>嘿嘿嘿！欢迎掉进兔兔星球，这里禁止大声喧哗，但可以偷偷贴贴！！</p>
     <p>本星球已准备好接收宇宙悄悄话和甜甜贴贴~ 快把你的小秘密贴上来！</p>
   </div>
-  <div class="main-container">
-    <div class="message-display" style="height: 600px;">
+  <div class="main-container" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem;">
+    <div class="left-column">
       <div class="pagination" id="pagination" style="text-align: left; padding-bottom: 8px;"></div>
       <div class="message-list" id="message-list" style="display: grid; grid-template-columns: 45% 45%; grid-template-rows: 260px 260px; gap: 20px 5%; justify-content: center;"></div>
     </div>
-    <div class="input-area">
+    <div class="right-column input-area">
       <textarea id="message-input" placeholder="输入留言区~"></textarea>
       <input type="text" id="username" placeholder="请输入你的名字" />
       <button onclick="submitMessage()">发送！</button>
