@@ -82,8 +82,8 @@ body {
   gap: 10px;
   background: #fff;
   border-radius: 20px;
-  padding: 20px;
-}
+  height: auto;
+  padding-bottom: 1.5rem;
 textarea {
   resize: none;
   height: 150px;
