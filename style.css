@@ -39,13 +39,7 @@ body {
   overflow: hidden;
   position: relative;
 }
-.message-list {
-  display: grid;
-  grid-template-columns: 45% 45%;
-  grid-template-rows: 260px 260px;
-  gap: 20px 5%;
-  justify-content: center;
-}
+
 .message-card {
   background: #f4d6d3;
   border-radius: 20px;
@@ -132,4 +126,12 @@ input:focus, textarea:focus {
   border-radius: 20px;
   padding: 20px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+}
+
+
+.message-list {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
