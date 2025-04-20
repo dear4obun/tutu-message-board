@@ -156,3 +156,24 @@ input:focus, textarea:focus {
   height: 600px;
   overflow-y: auto;
 }
+
+
+
+/* 🌈 恢复横向布局 */
+#main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+/* 🌸 留言样式补全 */
+.message {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  box-shadow: 0 0 4px rgba(0,0,0,0.1);
+  word-break: break-word;
+}
