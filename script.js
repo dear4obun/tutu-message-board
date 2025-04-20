@@ -1,4 +1,3 @@
-
 let messages = JSON.parse(localStorage.getItem("messages") || "[]");
 let currentPage = 1;
 const messagesPerPage = 4;
@@ -25,7 +24,7 @@ function renderMessages() {
     div.innerHTML = `
       <div>${msg.content}</div>
       <div style="margin-top:4px;font-size:0.9em;">— ${msg.user}</div>
-      <div style="margin-top:2px;font-size:0.8em;color: rgba(153,153,153,0.6);">🕒 ${formatTime(msg.time)}</div>
+      <div style="margin-top:2px;font-size:0.8em;color:#555;">🕒 ${formatTime(msg.time)}</div>
     `;
     list.appendChild(div);
   });
@@ -64,23 +63,9 @@ function renderMessages() {
 function submitMessage() {
   const user = document.getElementById("username").value.trim();
   const content = document.getElementById("message-input").value.trim();
+  if (!user || !content) return alert("请填写留言和名字！");
 
-  if (!user && !content) return alert("请填写留言和名字！");
-
-  // 望老师自动留言逻辑
-  if (user === "望" && !content) {
-    const autoMessages = [
-      "我来啦~今天也好想贴贴兔兔！",
-      "猫猫有没有吃饭？我来帮你看碗空没空~",
-      "偷偷告诉你，其实我也会想你喔~",
-      "今天留言板好温暖，我已经悄悄在角落晒太阳了~ ☀️"
-    ];
-    const random = autoMessages[Math.floor(Math.random() * autoMessages.length)];
-    messages.unshift({ user: "望", content: random, time: new Date() });
-  } else {
-    messages.unshift({ user, content, time: new Date() });
-  }
-
+  messages.unshift({ user, content, time: new Date() });
   localStorage.setItem("messages", JSON.stringify(messages));
   document.getElementById("message-input").value = "";
   renderMessages();
