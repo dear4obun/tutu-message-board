@@ -266,3 +266,11 @@ function submitMessage() {
   nameInput.value = "";
   contentInput.value = "";
 }
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const sendButton = document.querySelector("button");
+  if (sendButton) {
+    sendButton.addEventListener("click", submitMessage);
+  }
+});
