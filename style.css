@@ -141,14 +141,6 @@ input:focus, textarea:focus {
 }
 
 
-.cat-button-imgs {
-  position: absolute;
-  left: 260px; /* 猫头像宽220 + padding 20 + buffer */
-  top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
 
 .frame-img {
   width: 90px;
@@ -187,47 +179,15 @@ input:focus, textarea:focus {
 }
 
 /* 修复像素框位置防止溢出 */
-.cat-button-imgs {
-  position: absolute;
-  left: 260px;
-  top: 40px;  /* 原来10px过高，改为40px贴合头像 */
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-height: 280px;
-  overflow: hidden;
-}
 
 
 /* 修复像素按钮显示不全的问题 */
-.cat-button-imgs {
-  position: absolute;
-  left: 260px;
-  top: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  height: auto;
-  max-height: none;
-  overflow: visible;
-}
 .frame-img {
   display: block;
 }
 
 
 /* 强制覆盖并修正按钮排布问题 */
-.cat-button-imgs {
-  position: absolute;
-  left: 260px;
-  top: 40px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-height: none !important;
-  height: auto !important;
-  overflow: visible;
-}
 .frame-img {
   display: block;
   width: 90px;
@@ -237,6 +197,14 @@ input:focus, textarea:focus {
 
 
 /* 上移按钮至顶部 10px 对齐猫咪区上边缘 */
+
 .cat-button-imgs {
-  top: 10px !important;
+  position: absolute;
+  left: 260px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+  overflow: visible;
 }
