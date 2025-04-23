@@ -120,7 +120,17 @@ input:focus, textarea:focus {
   border: 2px solid #EB99A7;
 }
 
-
+#cat-zone-fixed {
+  position: absolute;
+  width: 640px;
+  height: 360px;
+  background: #FFFFFF;
+  border: 3px solid #FFB4C8;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(255, 200, 220, 0.3);
+  box-sizing: border-box;
+}
 
 #cat-avatar-img {
   width: 220px;
@@ -131,91 +141,17 @@ input:focus, textarea:focus {
 }
 
 
-
-.frame-img {
-  width: 90px;
-  height: 53px;
-  image-rendering: pixelated;
-}
-
-
-.catzone-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 640px;
-  height: 360px;
-  z-index: 0;
-  pointer-events: none;
-}
-#cat-zone-fixed > *:not(.catzone-bg) {
-  position: relative;
-  z-index: 1;
-}
-
-
-/* 修复猫咪区框线消失问题 */
-
-
-/* 修复像素框位置防止溢出 */
-
-
-/* 修复像素按钮显示不全的问题 */
-.frame-img {
-  display: block;
-}
-
-
-/* 强制覆盖并修正按钮排布问题 */
-.frame-img {
-  display: block;
-  width: 90px;
-  height: 53px;
-  image-rendering: pixelated;
-}
-
-
-/* 上移按钮至顶部 10px 对齐猫咪区上边缘 */
-
-
-
-
-/* 上移按钮以更贴近猫咪区边框（修正 padding 带来的视觉偏移） */
-
-
-
-
-
-
-.frame-img{
-  display:block;
-  width:90px;
-  height:53px;
-  margin:0;
-  image-rendering:pixelated;
-}
-
-
-
 .cat-button-imgs {
   position: absolute;
-  left: 260px;
-  top: 33px !important;  /* border 3px + padding 20px + inner offset 10px */
+  left: 260px; /* 猫头像宽220 + padding 20 + buffer */
+  top: 10px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow: visible;
 }
 
-#cat-zone-fixed {
-  position: relative;
-  border: 3px solid #FFB4C8;
-  border-radius: 20px;
-  background: transparent;
-  padding: 20px;
-  box-shadow: 0 0 8px rgba(255,200,220,.3);
-  box-sizing: border-box;
-  width: 640px;
-  height: 360px;
-  overflow: hidden;
+.frame-img {
+  width: 90px;
+  height: 53px;
+  image-rendering: pixelated;
 }
