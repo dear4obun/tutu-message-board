@@ -234,3 +234,9 @@ input:focus, textarea:focus {
   height: 53px;
   image-rendering: pixelated;
 }
+
+
+/* 将按钮容器上移，距猫咪区顶端 10px */
+.cat-button-imgs {
+  top: 10px !important;
+}
