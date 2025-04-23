@@ -120,8 +120,10 @@ input:focus, textarea:focus {
   border: 2px solid #EB99A7;
 }
 
-/* 猫咪区样式 */
 #cat-zone{
+  position:absolute;
+  top:510px;
+  left:1265px;
   width:640px;
   height:360px;
   background:#FFFFFF;
