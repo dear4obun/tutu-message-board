@@ -119,17 +119,3 @@ input:focus, textarea:focus {
   outline: none;
   border: 2px solid #EB99A7;
 }
-
-#cat-zone{
-  position:absolute;
-  top:510px;
-  left:1265px;
-  width:640px;
-  height:360px;
-  background:#FFFFFF;
-  border:3px solid #FFB4C8;
-  border-radius:20px;
-  padding:20px;
-  box-shadow:0 0 8px rgba(255,200,220,.3);
-  box-sizing:border-box;
-}
