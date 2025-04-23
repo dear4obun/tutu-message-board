@@ -121,28 +121,12 @@ input:focus, textarea:focus {
 }
 
 
-.cat-zone-precise {
+.cat-zone-coexist {
   position: absolute;
-  top: 420px; /* 输入区下方约390px + 30px */
-  left: 1265px; /* 与输入区左边框对齐 */
+  top: 510px;
+  left: 1265px;
   width: 640px;
   height: 360px;
-  background-color: #FFFFFF;
-  border: 3px solid #FFB4C8;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 0 8px rgba(255, 200, 220, 0.3);
-  font-size: 16px;
-  color: #444;
-}
-
-
-.cat-zone-final-fixed {
-  position: absolute;
-  top: 390px;
-  left: 1028px;
-  width: 507px;
-  height: 368px;
   background-color: #FFFFFF;
   border: 3px solid #FFB4C8;
   border-radius: 20px;
