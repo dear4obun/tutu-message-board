@@ -139,3 +139,19 @@ input:focus, textarea:focus {
   left: 20px;
   top: 40px;
 }
+
+
+.cat-button-imgs {
+  position: absolute;
+  left: 260px; /* 猫头像宽220 + padding 20 + buffer */
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.frame-img {
+  width: 90px;
+  height: 53px;
+  image-rendering: pixelated;
+}
