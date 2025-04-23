@@ -121,10 +121,10 @@ input:focus, textarea:focus {
 }
 
 
-.cat-zone-coexist {
+.cat-zone-precise {
   position: absolute;
-  top: 510px;
-  left: 1265px;
+  top: 420px; /* 输入区下方约390px + 30px */
+  left: 1265px; /* 与输入区左边框对齐 */
   width: 640px;
   height: 360px;
   background-color: #FFFFFF;
