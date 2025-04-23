@@ -214,3 +214,23 @@ input:focus, textarea:focus {
 .frame-img {
   display: block;
 }
+
+
+/* 强制覆盖并修正按钮排布问题 */
+.cat-button-imgs {
+  position: absolute;
+  left: 260px;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: none !important;
+  height: auto !important;
+  overflow: visible;
+}
+.frame-img {
+  display: block;
+  width: 90px;
+  height: 53px;
+  image-rendering: pixelated;
+}
