@@ -155,3 +155,18 @@ input:focus, textarea:focus {
   height: 53px;
   image-rendering: pixelated;
 }
+
+
+.catzone-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 640px;
+  height: 360px;
+  z-index: 0;
+  pointer-events: none;
+}
+#cat-zone-fixed > *:not(.catzone-bg) {
+  position: relative;
+  z-index: 1;
+}
