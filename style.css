@@ -135,14 +135,7 @@ input:focus, textarea:focus {
 
 
 
-.cat-button-imgs {
-  position: absolute;
-  left: 260px; /* 猫头像宽220 + padding 20 + buffer */
-  top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+
 
 .frame-img {
   width: 90px;
@@ -168,15 +161,7 @@ input:focus, textarea:focus {
   z-index: 2;
 }
 
-.cat-button-imgs {
-  position: absolute;
-  left: 260px;
-  top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 2;
-}
+
 
 .catzone-bg {
   position: absolute;
@@ -187,4 +172,15 @@ input:focus, textarea:focus {
   z-index: 0;
   pointer-events: none;
   border-radius: 20px;
+}
+
+
+.cat-button-imgs {
+  position: absolute;
+  left: 260px; /* 猫头像宽220 + padding 20 + buffer */
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
 }
