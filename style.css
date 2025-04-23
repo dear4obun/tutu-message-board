@@ -208,3 +208,9 @@ input:focus, textarea:focus {
   height: auto;
   overflow: visible;
 }
+
+
+/* 上移按钮以更贴近猫咪区边框（修正 padding 带来的视觉偏移） */
+.cat-button-imgs {
+  top: -6px !important;
+}
