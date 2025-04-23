@@ -120,17 +120,7 @@ input:focus, textarea:focus {
   border: 2px solid #EB99A7;
 }
 
-#cat-zone-fixed {
-  position: absolute;
-  width: 640px;
-  height: 360px;
-  background: #FFFFFF;
-  border: 3px solid #FFB4C8;
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 0 8px rgba(255, 200, 220, 0.3);
-  box-sizing: border-box;
-}
+
 
 #cat-avatar-img {
   width: 220px;
@@ -165,18 +155,7 @@ input:focus, textarea:focus {
 
 
 /* 修复猫咪区框线消失问题 */
-#cat-zone-fixed {
-  border: 3px solid #FFB4C8;
-  border-radius: 20px;
-  background: transparent;
-  padding: 20px;
-  box-shadow: 0 0 8px rgba(255,200,220,.3);
-  box-sizing: border-box;
-  position: absolute;
-  width: 640px;
-  height: 360px;
-  overflow: hidden;
-}
+
 
 /* 修复像素框位置防止溢出 */
 
@@ -226,4 +205,17 @@ input:focus, textarea:focus {
   flex-direction: column;
   gap: 10px;
   overflow: visible;
+}
+
+#cat-zone-fixed {
+  position: relative;
+  border: 3px solid #FFB4C8;
+  border-radius: 20px;
+  background: transparent;
+  padding: 20px;
+  box-shadow: 0 0 8px rgba(255,200,220,.3);
+  box-sizing: border-box;
+  width: 640px;
+  height: 360px;
+  overflow: hidden;
 }
