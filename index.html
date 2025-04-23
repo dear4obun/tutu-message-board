@@ -34,6 +34,7 @@
   <p>🐾 猫咪区：位置参考图像精确放置。</p>
 </div>
 
+
 <script>
 function alignCatZone() {
   const input = document.querySelector(".input-area");
@@ -48,15 +49,7 @@ function alignCatZone() {
   const displayRect = display.getBoundingClientRect();
 
   catZone.style.left = inputRect.left + 'px';
-  catZone.style.top = (btnRect.bottom + 40) + 'px';
-
-  // 检查对齐间距是否符合图示
-  const displayRight = displayRect.right;
-  const catLeft = inputRect.left;
-  const spacing = catLeft - displayRight;
-  if (Math.abs(spacing - 40) > 1) {
-    catZone.style.borderColor = 'red';  // 警告显示（实际只辅助开发）
-  }
+  catZone.style.top = (btnRect.bottom + 40) + 'px'; // 50px - 10px shift
 }
 window.addEventListener('load', alignCatZone);
 window.addEventListener('resize', alignCatZone);
