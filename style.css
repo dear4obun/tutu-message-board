@@ -151,26 +151,40 @@ input:focus, textarea:focus {
 }
 
 
-.catzone-bg {
-  position: absolute;
-  width: 640px;
-  height: 360px;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  pointer-events: none;
-}
+
 #cat-zone-fixed > *:not(.catzone-bg) {
   position: relative;
   z-index: 1;
 }
 
 
+
+
+
 #cat-avatar-img {
   position: absolute;
   left: 20px;
   top: 10px;
-  width: 130px;
-  height: 130px;
   z-index: 2;
+}
+
+.cat-button-imgs {
+  position: absolute;
+  left: 260px;
+  top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+.catzone-bg {
+  position: absolute;
+  width: 638px;
+  height: 358px;
+  top: 1px;
+  left: 1px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: 20px;
 }
