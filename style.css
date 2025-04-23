@@ -140,22 +140,21 @@ input:focus, textarea:focus {
   top: 40px;
 }
 
-#cat-button-column {
+
+.cat-frame-column {
   position: absolute;
+  left: 260px; /* 220px avatar + 20px padding + 20px留白 */
   top: 10px;
-  left: 260px; /* 220px avatar + 20px margin + 20px buffer */
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.pixel-button {
+.pixel-frame {
   width: 90px;
-  height: 50px;
-  background-color: #FCE8EC; /* 参考马卡龙色板中的柔粉色 */
-  border: 2px solid #D89CAC; /* 参考粉紫边框 */
-  image-rendering: pixelated;
-  box-shadow: inset -2px -2px 0 #FFFFFF,
-              inset 2px 2px 0 #C27D9D,
-              2px 2px 0 #C27D9D;
+  height: 53px;
+  border: 2px solid #FFB4C8; /* 粉马卡龙色板中使用色 */
+  background-color: #FFF6F9;
+  border-radius: 8px; /* 圆角像素风 */
+  box-shadow: inset 0 0 0 2px #FFD6E8;
 }
