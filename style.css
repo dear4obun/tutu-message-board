@@ -216,12 +216,14 @@ input:focus, textarea:focus {
   image-rendering:pixelated;
 }
 
-.cat-button-imgs{
-  position:absolute;
-  left:260px;
-  top:10px !important; /* exactly 10px from outer border */
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  overflow:visible;
+
+
+.cat-button-imgs {
+  position: absolute;
+  left: 260px;
+  top: 33px !important;  /* border 3px + padding 20px + inner offset 10px */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: visible;
 }
