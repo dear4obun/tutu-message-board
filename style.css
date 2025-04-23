@@ -131,3 +131,11 @@ input:focus, textarea:focus {
   box-shadow: 0 0 8px rgba(255, 200, 220, 0.3);
   box-sizing: border-box;
 }
+
+#cat-avatar-img {
+  width: 220px;
+  height: 220px;
+  position: absolute;
+  left: 20px;
+  top: 40px;
+}
