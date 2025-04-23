@@ -236,7 +236,7 @@ input:focus, textarea:focus {
 }
 
 
-/* 向上微调按钮区位置：首个按钮距离猫咪区顶边 10px */
+/* 上移按钮至顶部 10px 对齐猫咪区上边缘 */
 .cat-button-imgs {
   top: 10px !important;
 }
