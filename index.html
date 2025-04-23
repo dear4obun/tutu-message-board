@@ -27,9 +27,28 @@
     </div>
   </div>
   <script src="script.js"></script>
+
+<!-- 猫咪区 -->
+<div id="cat-zone">
+    <p style="margin:0;">🐾 这里是猫咪区~</p>
+</div>
+
+<script>
+/* 运行时精确定位猫咪区：距“发送！”按钮下沿 50px，左对齐输入区 */
+window.addEventListener('load', positionCatZone);
+window.addEventListener('resize', positionCatZone);
+
+function positionCatZone(){
+  const inputArea = document.querySelector('.input-area');
+  const sendBtn   = inputArea ? inputArea.querySelector('button') : null;
+  const catZone   = document.getElementById('cat-zone');
+  if(!inputArea || !sendBtn || !catZone) return;
+  const rectBtn = sendBtn.getBoundingClientRect();
+  catZone.style.position = 'absolute';
+  catZone.style.left  = rectBtn.left + 'px';       // 左对齐输入区
+  catZone.style.top   = (rectBtn.bottom + 50) + 'px'; // 距离发送按钮下沿 50px
+  catZone.style.zIndex = 10;
+}
+</script>
 </body>
 </html>
-
-<div id="cat-zone">
-  <p>🐾 猫咪区：展示区右侧 · 输入区下方 · 对齐左边</p>
-</div>
