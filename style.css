@@ -132,13 +132,7 @@ input:focus, textarea:focus {
   box-sizing: border-box;
 }
 
-#cat-avatar-img {
-  width: 220px;
-  height: 220px;
-  position: absolute;
-  left: 20px;
-  top: 40px;
-}
+
 
 
 .cat-button-imgs {
@@ -169,4 +163,14 @@ input:focus, textarea:focus {
 #cat-zone-fixed > *:not(.catzone-bg) {
   position: relative;
   z-index: 1;
+}
+
+
+#cat-avatar-img {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  width: 130px;
+  height: 130px;
+  z-index: 2;
 }
