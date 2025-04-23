@@ -197,3 +197,20 @@ input:focus, textarea:focus {
   max-height: 280px;
   overflow: hidden;
 }
+
+
+/* 修复像素按钮显示不全的问题 */
+.cat-button-imgs {
+  position: absolute;
+  left: 260px;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: auto;
+  max-height: none;
+  overflow: visible;
+}
+.frame-img {
+  display: block;
+}
